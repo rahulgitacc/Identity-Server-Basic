@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
+using IdentityServer4.Models;
 
 namespace IdSrv4.InMem
 {
@@ -33,6 +34,8 @@ namespace IdSrv4.InMem
                 options.AuthenticationDisplayName = "Windows";
             });
 
+            #region Identity Server 4 configuration
+
             var builder = services.AddIdentityServer(options =>
             {
                 options.Events.RaiseErrorEvents = true;
@@ -51,6 +54,8 @@ namespace IdSrv4.InMem
             builder.AddInMemoryIdentityResources(Configuration.GetSection("IdentityResources"));
             builder.AddInMemoryApiResources(Configuration.GetSection("ApiResources"));
             builder.AddInMemoryClients(Configuration.GetSection("clients"));
+
+            #endregion
 
             if (Environment.IsDevelopment())
             {
