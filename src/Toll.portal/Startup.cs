@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authentication;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Authentication.OpenIdConnect;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -33,6 +36,37 @@ namespace Toll.portal
 
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
+
+            // client : Configure identity server
+            ConfigureIdentityServer(services);
+        }
+
+        private void ConfigureIdentityServer(IServiceCollection services)
+        {
+            var builder = services.AddAuthentication(options => SetAuthenticationOptions(options));
+
+            builder.AddCookie();
+            builder.AddOpenIdConnect(options => SetOpenIdConnectOptions(options));
+        }
+
+        private void SetOpenIdConnectOptions(OpenIdConnectOptions options)
+        {
+            options.Authority = "http://localhost:5432/";
+            options.ClientId = "toll.portal";
+            options.RequireHttpsMetadata = false;
+            options.Scope.Add("profile");
+            options.Scope.Add("openid");
+            //options.Scope.Add("toll.api");
+            options.ResponseType = "id_token";
+            //options.SaveTokens = true;
+            //options.ClientSecret = "0b4168e4-2832-48ea-8fc8-7e4686b3620b";
+
+        }
+
+        private void SetAuthenticationOptions(AuthenticationOptions options)
+        {
+            options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+            options.DefaultChallengeScheme = OpenIdConnectDefaults.AuthenticationScheme;
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -52,7 +86,7 @@ namespace Toll.portal
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-
+            app.UseAuthentication();
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
