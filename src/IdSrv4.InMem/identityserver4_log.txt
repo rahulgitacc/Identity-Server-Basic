@@ -28,3 +28,28 @@
 2019-08-20 15:33:18.922 +05:30 [DBG] Consent Return Url Parameter: returnUrl
 2019-08-20 15:33:18.923 +05:30 [DBG] Error Url: /home/error
 2019-08-20 15:33:18.923 +05:30 [DBG] Error Id Parameter: errorId
+2019-08-20 16:00:22.189 +05:30 [INF] Starting IdentityServer4 version 2.5.0.0
+2019-08-20 16:00:22.320 +05:30 [INF] You are using the in-memory version of the persisted grant store. This will store consent decisions, authorization codes, refresh and reference tokens in memory only. If you are using any of those features in production, you want to switch to a different store implementation.
+2019-08-20 16:00:22.355 +05:30 [INF] Using the default authentication scheme idsrv for IdentityServer
+2019-08-20 16:00:22.356 +05:30 [DBG] Using idsrv as default ASP.NET Core scheme for authentication
+2019-08-20 16:00:22.357 +05:30 [DBG] Using idsrv as default ASP.NET Core scheme for sign-in
+2019-08-20 16:00:22.358 +05:30 [DBG] Using idsrv as default ASP.NET Core scheme for sign-out
+2019-08-20 16:00:22.358 +05:30 [DBG] Using idsrv as default ASP.NET Core scheme for challenge
+2019-08-20 16:00:22.358 +05:30 [DBG] Using idsrv as default ASP.NET Core scheme for forbid
+2019-08-20 16:00:25.041 +05:30 [DBG] Login Url: /Account/Login
+2019-08-20 16:00:25.044 +05:30 [DBG] Login Return Url Parameter: ReturnUrl
+2019-08-20 16:00:25.044 +05:30 [DBG] Logout Url: /Account/Logout
+2019-08-20 16:00:25.044 +05:30 [DBG] ConsentUrl Url: /consent
+2019-08-20 16:00:25.044 +05:30 [DBG] Consent Return Url Parameter: returnUrl
+2019-08-20 16:00:25.044 +05:30 [DBG] Error Url: /home/error
+2019-08-20 16:00:25.044 +05:30 [DBG] Error Id Parameter: errorId
+2019-08-20 16:00:29.091 +05:30 [DBG] Request path /.well-known/openid-configuration matched to endpoint type Discovery
+2019-08-20 16:00:29.096 +05:30 [DBG] Endpoint enabled: Discovery, successfully created handler: IdentityServer4.Endpoints.DiscoveryEndpoint
+2019-08-20 16:00:29.096 +05:30 [INF] Invoking IdentityServer endpoint: IdentityServer4.Endpoints.DiscoveryEndpoint for /.well-known/openid-configuration
+2019-08-20 16:00:29.102 +05:30 [DBG] Start discovery request
+2019-08-20 16:10:40.936 +05:30 [DBG] CORS request made for path: /account/login from origin: null but was ignored because path was not for an allowed IdentityServer CORS endpoint
+2019-08-20 16:10:42.013 +05:30 [INF] {"Username":"alice","Provider":null,"ProviderUserId":null,"SubjectId":"818727","DisplayName":"alice","Endpoint":"UI","ClientId":null,"Category":"Authentication","Name":"User Login Success","EventType":"Success","Id":1000,"Message":null,"ActivityId":"0HLP5B5KN3JAJ:00000002","TimeStamp":"2019-08-20T10:40:41.0000000Z","ProcessId":7444,"LocalIpAddress":"::1:5432","RemoteIpAddress":"::1","$type":"UserLoginSuccessEvent"}
+2019-08-20 16:10:42.373 +05:30 [DBG] Augmenting SignInContext
+2019-08-20 16:10:42.391 +05:30 [DBG] Adding idp claim with value: local
+2019-08-20 16:10:42.391 +05:30 [DBG] Adding amr claim with value: pwd
+2019-08-20 16:10:42.563 +05:30 [INF] AuthenticationScheme: idsrv signed in.

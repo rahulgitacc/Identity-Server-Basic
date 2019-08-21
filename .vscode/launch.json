@@ -9,9 +9,9 @@
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/src/IdSrv4.InMem/bin/Debug/netcoreapp2.1/IdSrv4.InMem.dll",
+            "program": "${workspaceFolder}/src/Toll.portal/bin/Debug/netcoreapp2.2/Toll.portal.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/src/IdSrv4.InMem",
+            "cwd": "${workspaceFolder}/src/Toll.portal",
             "stopAtEntry": false,
             "serverReadyAction": {
                 "action": "openExternally",
