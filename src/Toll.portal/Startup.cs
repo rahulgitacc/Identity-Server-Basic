@@ -56,10 +56,10 @@ namespace Toll.portal
             options.RequireHttpsMetadata = false;
             options.Scope.Add("profile");
             options.Scope.Add("openid");
-            //options.Scope.Add("toll.api");
-            options.ResponseType = "id_token";
-            //options.SaveTokens = true;
-            //options.ClientSecret = "0b4168e4-2832-48ea-8fc8-7e4686b3620b";
+            options.Scope.Add("webapplication1");
+            options.ResponseType = "code id_token";
+            options.SaveTokens = true;
+            options.ClientSecret = "0b4168e4-2832-48ea-8fc8-7e4686b3620b";
 
         }
 
